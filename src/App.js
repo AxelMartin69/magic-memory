@@ -17,8 +17,7 @@ function App() {
     const [choiceOne, setChoiceOne] = useState(null)
     const [choiceTwo, setChoiceTwo] = useState(null)
 
-
-    // shuffle cards
+    // shuffle cards for new game
     const shuffleCards = () => {
         const shuffledCards = [...cardImages, ...cardImages]
             .sort(() => Math.random() - 0.5)
@@ -31,7 +30,6 @@ function App() {
     // handle a choice
     const handleChoice = (card) => {
         choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
-
     }
 
     // compare 2 selected cards
@@ -49,7 +47,7 @@ function App() {
                 })
                 resetTurn()
             } else {
-                resetTurn()
+                setTimeout(() => resetTurn(), 1000) 
             }
         }
     }, [choiceOne, choiceTwo])
@@ -74,6 +72,7 @@ function App() {
                         key={card.id}
                         card={card}
                         handleChoice={handleChoice}
+                        flipped={card === choiceOne || card === choiceTwo || card.matched}
                     />
                 ))}
             </div>
