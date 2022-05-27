@@ -2,7 +2,7 @@
   "name": "magic-memory",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://AxelMartin69.github.io",
+  "homepage": "https://axelmartin69.github.io/magic-memory/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
